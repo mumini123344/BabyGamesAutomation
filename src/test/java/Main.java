@@ -22,8 +22,7 @@ public class Main {
 
     @BeforeTest
     public void setUp() throws MalformedURLException, InterruptedException {
-        driver = setup.initializeDriver("com.happytools.learning.kids.games",
-                "com.unity3d.player.UnityPlayerActivity");
+        driver = setup.initializeDriver("com.happytools.learning.kids.games", "com.unity3d.player.UnityPlayerActivity");
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         startingSteps = new StartingSteps(driver);
         homeSteps = new HomeSteps(driver);
@@ -34,8 +33,7 @@ public class Main {
 
     @Test(priority = 1)
     public void FirstTwoPage() throws InterruptedException {
-        startingSteps.tapClose(driver)
-                .tapSecondClosse(driver);
+        startingSteps.tapClose(driver).tapSecondClosse(driver);
 
         gamesSteps.swipeLeft(driver, 0.2, 1);
         helper.interactWithCategories(new int[][]{{260, 700}, {1050, 806}, {1805, 757}}, 2);
